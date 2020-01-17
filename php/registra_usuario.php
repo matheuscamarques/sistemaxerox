@@ -2,6 +2,8 @@
         include 'connection.php';
         include 'objetos.php';
 
+
+
         function validaCPF($cpf) {
         
             // Extrai somente os números
@@ -34,10 +36,14 @@
         {
 
                 if(validaCPF($usuario->cpf)==false){
-                    echo "Cpf inválido<br>";
+
+                    if(!($usuario->cpf == NULL)){
+                        echo "<div class='alertas'>O Cpf digitado parece ser inválido</div><br>";
+                    }
+                    
                 }
                 else{
-                    echo "Cpf válido<br>";
+                    //echo "Cpf válido<br>";
 
                     $senhaMD5 = md5($usuario->senha);
 
@@ -52,9 +58,10 @@
 
 
                     if(mysqli_affected_rows($conn) && mysqli_affected_rows($conn)!=-1 ){
-                        echo "<script>alert('Inserção realizada com sucesso...');</script>";}
+                        echo "<script>alert('Inserção realizada com sucesso...');</script>";
+                        echo "<div class='alertass'>Parabéns você foi cadastrado com sucesso.</div><br>";}
                     elseif(mysqli_affected_rows($conn) == -1)
-                        echo "Seu CPF já está registrado no sistema.<br>";
+                        echo "<div class='alertas'>Seu CPF já está registrado no sistema.</div><br>";
                     else{
                         echo "Erro ao inserir os dados:".mysqli_error($conn);}
                 }

@@ -1,0 +1,124 @@
+html, body {
+
+    margin: 0;
+    padding: 0;
+    box-sizing: auto;    
+    
+}
+
+.registrausuario{
+    
+    position: relative;
+    background: black;
+    height: 550px;
+    width: 350px;
+    
+    border-radius: 5px;
+    top: -20px;
+    left: 20px;
+    
+    
+
+    
+
+}
+
+.registrausuario h1
+{
+    position: relative;
+    left: 70px;
+    color: white;
+    top: 10px;
+}
+
+.registrausuario label{
+    position: relative;
+    top: 10px;
+    left:25px;
+    width: 300px;
+    color: white;
+    padding: 5px ;
+    margin: 8px 4px;
+    align-items: center;
+    text-transform: uppercase;
+    text-align: center;
+    
+    
+
+
+}
+
+.registrausuario input{
+    position: relative;
+    width: 90%;
+    top:10px;
+    left: 5px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border: none;
+    border-radius:15px; ;
+    padding: 5px ;
+    margin: 4px 8px;
+
+}
+
+.registrausuario label:hover{
+    color: green;
+}
+
+.registrausuario input:hover{
+    border: solid 2px;
+    border-color: green;
+
+}
+
+.registrausuario button{
+    position: relative;
+    top: 20px;
+    background-color: rgb(8, 206, 15);
+    border: none;
+    border-radius: 29px;
+     color: white;
+     padding: 16px 32px;
+     text-decoration: none;
+     margin: 8px 15px;
+     cursor: pointer;
+     width: 90%;
+}
+.registrausuario button:hover{
+    background-color: green;
+
+}
+.registrausuario button.buttonr{
+    
+    background-color: rgb(206, 176, 8);
+    
+    
+}
+
+.registrausuario button.buttonr:hover{
+    
+    background-color: rgb(141, 120, 3);
+    
+    
+}
+
+.alertas{
+    padding: 20px 2px;
+     text-decoration: none;
+     margin: 8px 15px;
+    color: red;
+    text-transform: uppercase;
+    
+   
+}
+
+.alertass{
+    padding: 20px 2px;
+     text-decoration: none;
+     margin: 8px 15px;
+    color: green;
+    text-transform: uppercase;
+    
+   
+}
