@@ -8,8 +8,15 @@ Projeto sistema para um Xerox.
 
 
 - Interface do Cliente.
+ Alteração de dados.
+ Fazer pedido.
+ Ver pedidos.
+  
 - Interface do Administrador.
+ Adicionar ,alterar,remover,pesquisar , usuarios.
+ 
 - Contador de páginas de um PDF.
+
 - Envio de email formatado , com valor de páginas e valor apróximado de impressões.
 
 
