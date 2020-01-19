@@ -39,6 +39,7 @@
                 
                 $sql = "SELECT *FROM Usuario WHERE cpf=$cpf AND senha='$senha'";
                 //ERRO , A PRÓXIMA LINHA PULA
+                // FIXX ME
                 echo "<script>alert('$sql')</script>";
                 echo $sql;
 
