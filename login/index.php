@@ -38,12 +38,7 @@
                 
                 
                 $sql = "SELECT *FROM Usuario WHERE cpf=$cpf AND senha='$senha'";
-                //ERRO , A PRÓXIMA LINHA PULA
-                // FIXX ME
-                echo "<script>alert('$sql')</script>";
-                echo $sql;
-
-                $resultado = mysqli_query($connect,$sql);
+                $resultado = mysqli_query($conn,$sql);
 
 
                     if(mysqli_num_rows($resultado)==1){
