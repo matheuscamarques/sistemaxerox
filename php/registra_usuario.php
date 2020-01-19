@@ -58,7 +58,6 @@
 
 
                     if(mysqli_affected_rows($conn) && mysqli_affected_rows($conn)!=-1 ){
-                        echo "<script>alert('Inserção realizada com sucesso...');</script>";
                         echo "<div class='alertass'>Parabéns você foi cadastrado com sucesso.</div><br>";}
                     elseif(mysqli_affected_rows($conn) == -1)
                         echo "<div class='alertas'>Seu CPF já está registrado no sistema.</div><br>";

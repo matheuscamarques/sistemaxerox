@@ -39,10 +39,10 @@
 
                     $usuario = new Usuario;
 
-                    $usuario->cpf = @$_POST['cpf'];
-                    $usuario->nome=  @$_POST['nome'];
-                    $usuario->email= @$_POST['email'];
-                    $usuario->senha= @$_POST['senha'];
+                    $usuario->cpf = mysqli_escape_string($conn,$_POST['cpf']);
+                    $usuario->nome=  mysqli_escape_string($conn,$_POST['nome']);
+                    $usuario->email= mysqli_escape_string($conn,$_POST['email']);
+                    $usuario->senha= mysqli_escape_string($conn,$_POST['senha']);
                     $usuario->data_inicio= date("d-m-yy");
 
                     if(!($usuario->cpf == NULL))
