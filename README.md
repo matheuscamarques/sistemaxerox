@@ -13,7 +13,7 @@ Projeto sistema para um Xerox.
  Ver pedidos.
   
 - Interface do Administrador.
- Adicionar ,alterar,remover,pesquisar , usuarios.
+ Adicionar ,alterar,remover,pesquisar , usuarios.finaliza pedidos prontos.
  
 - Contador de páginas de um PDF.
 
