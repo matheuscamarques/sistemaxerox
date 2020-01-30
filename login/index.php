@@ -10,6 +10,7 @@
     require_once '../php/connection.php';
 
     //Sessão
+    
     session_start();
 
     //Button login
@@ -44,6 +45,7 @@
                     if(mysqli_num_rows($resultado)==1){
                         $dados = mysqli_fetch_array($resultado);
                         $_SESSION['logado'] = true;
+                        $_SESSION['user'] = $dados['usuario'];
                         $_SESSION['cpf_user'] = $dados['cpf'];
                         header('Location: home.php');
                     }
@@ -58,7 +60,7 @@
         }
 
     }
-
+    
 
     if(!empty($erros)){
         foreach($erros as $erro){
