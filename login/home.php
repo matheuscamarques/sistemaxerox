@@ -9,7 +9,7 @@
     <?php include '../php/connection.php'; 
     session_start();
         if($_SESSION['logado']==true){
-            echo "Logado com sucesso!";
+            header('Location: ../user-ui/');
 
         }
         else{

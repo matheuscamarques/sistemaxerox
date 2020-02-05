@@ -14,7 +14,7 @@ function processandoPDF($conn,$novoNome,$cores,$dim,$fv,$numeroCopias,$mensagens
     //echo "MENSAGEM: ".$mensagens."<br>"; 
 
 
-    $hora= date('h:m:s');
+    $hora= date('H:i:s');
     $data = date('d-m-yy');
     $status = "Aguardando orçamento";
 

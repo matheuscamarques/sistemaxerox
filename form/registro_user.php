@@ -27,7 +27,7 @@
                 </p>
                 <br>
                 <p>
-                    <button type="submit" class="button-registrar" onclick="return ValidarFrmCadastroUsuario()">Cadastrar</button>
+                    <button type="submit" name="enviar-formulario" class="button-registrar" onclick="return ValidarFrmCadastroUsuario()">Cadastrar</button>
                 </p>
                 <br>
     
@@ -38,13 +38,17 @@
                     //AO IMPLEMENTAR FUNÇÕES NÃO ESQUEÇA DE FECHAR A CONNEÇAO $conn.close();
 
                     $usuario = new Usuario;
+                    
 
-                    $usuario->cpf = mysqli_escape_string($conn,$_POST['cpf']);
-                    $usuario->nome=  mysqli_escape_string($conn,$_POST['nome']);
-                    $usuario->email= mysqli_escape_string($conn,$_POST['email']);
-                    $usuario->senha= mysqli_escape_string($conn,$_POST['senha']);
-                    $usuario->data_inicio= date("d-m-yy");
+                    if(isset($_POST['enviar-formulario'])){
+                       $usuario->cpf = mysqli_escape_string($conn,$_POST['cpf']);
+                       $usuario->nome=  mysqli_escape_string($conn,$_POST['nome']);
+                       $usuario->email= mysqli_escape_string($conn,$_POST['email']);
+                       $usuario->senha= mysqli_escape_string($conn,$_POST['senha']);
+                       $usuario->data_inicio= date("d-m-yy");
 
+                    }
+                    
                     if(!($usuario->cpf == NULL))
                     {
                         registraUsuario($usuario,$conn);

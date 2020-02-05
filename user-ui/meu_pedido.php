@@ -1,35 +1,25 @@
-<?php
-include '../php/connection.php';
+<?php include "./arquitetura/header.php"; ?>
+<?php include "./arquitetura/menu.php"; ?>
 
-session_start();?>
+  <ul id="nav" style="float:right;width:335px;border:1px solid white;"> 
+    <li style="float:right; border:1px solid white;background-color:green;" ><a href="./meu_pedido.php?status=Pronto"><p style="font-size:10px;">PRONTOS</p></a></li> 
+    <li style="float:right;border:1px solid white;background-color:orange" ><a href="./meu_pedido.php?status=Aguardando orçamento"><p style="font-size:10px;">ORÇAMENTO</p></a></li> 
+    <li style="float:right;border:1px solid white;background-color:red"><a href="./meu_pedido.php?status=Rejeitado"><p style="font-size:10px;">REJEITADOS</p></a></li> 
 
-<html>
-    <head>
-        <title><?php $title = $_SESSION['user']; echo "Cliente: ".$title;  ?></title>
-        	
-<link rel="stylesheet" type="text/css"  href="estilo.css" />
-    </head>
-<body>
-<ul id="nav"> 
-    <li><a href="./index.php">Home</a></li> 
-    <li><a href="./pedido.php">Fazer pedido</a></li> 
-    <li><a href="./meu_pedido.php">Meus pedidos</a></li> 
-    
-    </li>
- 
-    <li><a href="#">Contato</a></li> 
   </ul>
+
 
 
 
     <div class="meus_pedidos">
     
     <?php 
+            $status = @$_GET['status'];
             $cpf = intval($_SESSION['cpf_user']);
             //var_dump($cpf);
             //echo $cpf."<br>";
 
-            $sql = "SELECT cpf , a.idPedido,a.hora,a.data,a.arquivo,a.quantidade_paginas,a.num_copias,a.valor,a.status FROM Pedido_usuario INNER JOIN Pedido AS a using(idPedido) where cpf=$cpf ;";
+            $sql = "SELECT cpf , a.idPedido,a.hora,a.data,a.arquivo,a.quantidade_paginas,a.num_copias,a.valor,a.status FROM Pedido_usuario INNER JOIN Pedido AS a using(idPedido) where cpf=$cpf AND a.status ='$status'  ORDER BY a.idPedido desc;";
 
             $result = mysqli_query($conn, $sql);
 
@@ -59,7 +49,7 @@ session_start();?>
                       echo     " <td>".$row["data"]."</td>";
                       echo     " <td>".$row["quantidade_paginas"]."</td>";
                       echo     " <td>".$row["num_copias"]."</td>";
-                      echo     " <td>".$row["valor"]."R$"."</td>";
+                      echo     " <td>".$row["valor"]." R$"."</td>";
                       echo     " <td>".$row["status"]."</td>";
                       echo      " <td> <a href='".$row["arquivo"]."'>Arquivo</a> </td>";
                       
@@ -70,7 +60,7 @@ session_start();?>
                 echo "</table>";
                 echo "</div>";
             } else {
-                echo "0 results";
+                echo "<script>console.log('0 results');</script>";
             }
 
             mysqli_close($conn);
@@ -82,10 +72,7 @@ session_start();?>
 
 
 
-</body>
-</html>
-
-
+    <?php include "./arquitetura/footer.php"; ?>
 
 
 

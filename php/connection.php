@@ -1,9 +1,9 @@
 <?php
 
-date_default_timezone_set('UTC');
+date_default_timezone_set('Brazil/East');
 $servername = "localhost";
-$username = "admin";
-$password = "admin";
+$username = "root";
+$password = "";
 $dbname = "loja_db";
 
 // Create connection
